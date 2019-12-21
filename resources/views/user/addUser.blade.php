@@ -41,6 +41,9 @@
 			<td></td>
 		</tr>
 	</table>
+	@foreach($errors->all() as $err)
+			<p style="color:red;">*{{$err}} </p>
+	@endforeach	
 </form>
 
 </body>

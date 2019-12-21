@@ -11,36 +11,32 @@
 	<form method="post" enctype="multipart/form-data">
 		 {{ csrf_field() }}
 	<table border="1">
-		@foreach($users as $s)
+		@foreach($jobs as $s)
 		<tr>
-			<td>USERNAME</td>
-			<td>{{$s['username']}}</td>
-		</tr>
-		<tr>
-			<td>Name</td>
-			<td><input type="text" name="name" value="{{$s['name']}}"></td>
+			<td>Job Title</td>
+			<td><input type="text" name="job_title" value="{{$s['job_title']}}"></td>
 		</tr>
 		<tr>
 			<td>Company Name</td>
 			<td><input type="text" name="company_name" value="{{$s['company_name']}}"></td>
 		</tr>
 		<tr>
-			<td>Contact Info</td>
-			<td><input type="text" name="contact_info" value="{{$s['contact_info']}}"></td>
+			<td>Location</td>
+			<td><input type="text" name="job_location" value="{{$s['job_location']}}"></td>
 		</tr>
 		<tr>
-			<td>Type</td>
-			<td><input type="text" name="type" value="{{$s['type']}}"></td>
+			<td>Salary</td>
+			<td><input type="text" name="salary" value="{{$s['salary']}}"></td>
 		</tr>
 		@endforeach
 		<tr>
 			<td><input type="submit" name="submit" value="Save"></td>
 			<td></td>
 		</tr>
-	</table>
-	@foreach($errors->all() as $err)
+		@foreach($errors->all() as $err)
 			<p style="color:red;">*{{$err}} </p>
-	@endforeach	
+		@endforeach	
+	</table>
 </form>
 
 </body>
